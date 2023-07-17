@@ -136,6 +136,15 @@ console.log(result);
   Es.: onlyLetters("I have 4 dogs") => ritorna "I have dogs"
 */
 
+function onlyLetters(stringa) {
+  let justLetters = stringa.replace(/[0-9]/g, "");
+  return justLetters;
+}
+
+let mockText = "Look at those 10 stars";
+let result = onlyLetters(mockText);
+console.log(result);
+
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
