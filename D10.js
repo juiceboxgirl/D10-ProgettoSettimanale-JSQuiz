@@ -149,9 +149,78 @@ console.log(result);
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
 
+function isThisAnEmail(string) {
+  const emailValidation = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  // Verifica se la stringa corrisponde all'espressione regolare
+  return emailValidation.test(string);
+}
+
+const emailText = "alessia.cesaroni1210@gmail.com";
+const thisEmail = isThisAnEmail(emailText);
+console.log(thisEmail);
+
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 */
+
+function whatDayIsIt() {
+  const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const currentDate = new Date();
+  const todayDate = currentDate.getDay();
+
+  return weekDays[todayDate];
+}
+
+const today = whatDayIsIt();
+console.log(today);
+
+/*Avevo iniziato dal fondo senza rendermi conto che si trattava degli esercizi extra, 
+quindi ho fatto questi due extra e poi quelli normali */
+
+/* ESERCIZIO 28 EXTRA
+  Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
+
+  Esempio:
+  tree(3)
+
+    *
+   ***
+  *****
+
+*/
+
+function tree(height) {
+  for (let i = 1; i <= height; i++) {
+    const spaces = " ".repeat(height - i);
+    const branches = "*".repeat(2 * i - 1);
+    console.log(spaces + branches);
+  }
+}
+
+tree(6);
+
+/* ESERCIZIO 29
+  Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
+*/
+
+function isItPrime(number) {
+  if (number <= 1) {
+    return false;
+  }
+  for (let i = 2; i <= Math.sqrt(number); i++) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+  {
+    return true;
+  }
+}
+
+const randomNum = 13;
+const primeNum = isItPrime(randomNum);
+console.log(primeNum);
 
 /* ESERCIZIO 8
   Scrivi una funzione chiamata "rollTheDices" che riceve un numero come parametro.
@@ -271,6 +340,16 @@ console.log(result);
   *****
 
 */
+
+function tree(height) {
+  for (let i = 1; i <= height; i++) {
+    const spaces = " ".repeat(height - i);
+    const branches = "*".repeat(2 * i - 1);
+    console.log(spaces + branches);
+  }
+}
+
+tree(6);
 
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
